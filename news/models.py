@@ -5,13 +5,10 @@ from account.models import User
 class Category(models.Model):
     name = models.CharField(max_length=200)
 
-
-# Create your models here.
-
-class Meta:
-    ordering = ['name']
-    verbose_name = 'Category'
-    verbose_name_plural = 'Categories'
+    class Meta:
+        ordering = ['name']
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
 
     def __str__(self):
         return self.name

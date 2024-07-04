@@ -10,7 +10,7 @@ def fetch(date_from):
     for category in Category.objects.all():
         response= client.get_everything(q=category.name, language='en', from_param=date_from)
         articles= response.get('articles',[])
-        if len(articles)==0:
+        if len(articles) == 0:
             print(f'No articles found for{category.name}')
         for article in articles:
             db_news= News(
